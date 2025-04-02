@@ -26,7 +26,15 @@
                         <input type="text" placeholder="Buscar itens, coleções...">
                         <button>🔍</button>
                     </div>
-                    <button class="btn">Entrar / Cadastrar</button>
+                    <div class="user-actions">
+                        <button class="btn">Entrar / Cadastrar</button>
+                        <div class="cart-icon">
+                            <button id="cart-toggle">
+                                🛒 
+                                <span id="cart-count">0</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -35,11 +43,10 @@
     <section class="hero">
         <div class="container">
             <h1>O Universo dos Colecionáveis em um só lugar</h1>
-            <p>Descubra, compre, venda e troque itens colecionáveis raros e únicos. 
+            <p>Descubra itens colecionáveis raros e únicos. 
                Junte-se a milhares de colecionadores apaixonados.</p>
             <div class="hero-buttons">
                 <button class="btn">Explorar Coleções</button>
-                <button class="btn btn-secondary">Vender Itens</button>
             </div>
         </div>
     </section>
@@ -96,7 +103,7 @@
         <div class="container">
             <h2 class="section-title">Itens em Destaque</h2>
             <div class="products-grid">
-                <div class="product-card">
+                <div class="product-card" data-id="1" data-name="Charizard 1ª Edição PSA 9" data-price="15000.00">
                     <div class="product-img">
                         <img src="images/charizard.jpg" alt="Charizard Raro">
                         <div class="product-badge">RARO</div>
@@ -108,9 +115,10 @@
                             <span>Pokemon Cards</span>
                             <span>3 Interessados</span>
                         </div>
+                        <button class="add-to-cart btn">Adicionar ao Carrinho</button>
                     </div>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-id="2" data-name="Batman Hot Toys Exclusivo" data-price="3500.00">
                     <div class="product-img">
                         <img src="images/batman.jpg" alt="Action Figure Rara">
                     </div>
@@ -121,11 +129,12 @@
                             <span>Action Figures</span>
                             <span>7 Interessados</span>
                         </div>
+                        <button class="add-to-cart btn">Adicionar ao Carrinho</button>
                     </div>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-id="3" data-name="Moeda Dom Pedro II 1869" data-price="8750.00">
                     <div class="product-img">
-                        <img src="/api/placeholder/280/220" alt="Moeda Rara">
+                        <img src="images/dompedro.jpeg" alt="Moeda Rara">
                         <div class="product-badge">ÚNICA</div>
                     </div>
                     <div class="product-content">
@@ -135,11 +144,12 @@
                             <span>Numismática</span>
                             <span>12 Interessados</span>
                         </div>
+                        <button class="add-to-cart btn">Adicionar ao Carrinho</button>
                     </div>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-id="4" data-name="Amazing Fantasy #15 CGC 4.5" data-price="120000.00">
                     <div class="product-img">
-                        <img src="/api/placeholder/280/220" alt="Quadrinho Raro">
+                        <img src="images/amazingfantasy.jpeg" alt="Quadrinho Raro">
                     </div>
                     <div class="product-content">
                         <h3>Amazing Fantasy #15 CGC 4.5</h3>
@@ -148,6 +158,7 @@
                             <span>Quadrinhos</span>
                             <span>5 Interessados</span>
                         </div>
+                        <button class="add-to-cart btn">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </div>
@@ -206,7 +217,6 @@
                         <li><a href="#">FAQ</a></li>
                         <li><a href="#">Política de Privacidade</a></li>
                         <li><a href="#">Termos de Uso</a></li>
-                        <li><a href="#">Como Vender</a></li>
                         <li><a href="#">Como Comprar</a></li>
                         <li><a href="#">Central de Ajuda</a></li>
                     </ul>
@@ -219,6 +229,20 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <div id="cart-overlay" class="cart-overlay">
+        <div class="cart-header">
+            <h2>Seu Carrinho</h2>
+            <button id="close-cart" class="close-cart">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart-message">Seu carrinho está vazio</p>
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-price">R$ 0,00</span>
+        </div>
+        <button id="checkout-btn">Finalizar Compra</button>
+    </div>
+    <script src="script.js" defer></script>
 </body>
 </html>

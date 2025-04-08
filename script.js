@@ -81,4 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
             addToCart(item);
         }
     });
+
+    document.addEventListener("click", (e) => {
+        if (cartOverlay && cartOverlay.classList.contains("open") && 
+            !cartOverlay.contains(e.target) && 
+            e.target !== cartToggle) {
+            cartOverlay.classList.remove("open");
+        }
+    });
 });

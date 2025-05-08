@@ -1,0 +1,14 @@
+{
+    "gabriela": {
+        "senha": "$2y$10$KH\/GpOnQMrCm07hN7YRO0ea6fYykk8XP5UbS42icwaVeKfSYZJF0W",
+        "primeiro_acesso": false
+    },
+    "odair": {
+        "senha": "98765432100",
+        "primeiro_acesso": true
+    },
+    "denilson": {
+        "senha": "45678912300",
+        "primeiro_acesso": true
+    }
+}
